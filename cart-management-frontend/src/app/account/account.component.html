@@ -1,0 +1,52 @@
+<!-- <p>account works!</p> -->
+<div class="whole">
+
+  <div class="account-container">
+    <h1>Welcome, {{ username }}!</h1>
+    <button (click)="logout()">Logout</button>
+    
+    
+    <h2>Available Items</h2>
+    <!-- Search bar -->
+    <div class="search-bar-container">
+      <input type="text" placeholder="Search items..." [(ngModel)]="searchTerm" (input)="filterItems()" class="search-bar" />
+    </div>
+    
+    
+    <div *ngFor="let item of paginatedItems" class="item-box">
+      <p>{{ item.itemName }} | {{item.description}} | ${{ item.price }}</p>
+      <button (click)="addToCart(item)">Add to Cart</button>
+    </div>
+    
+    
+    <!-- Pagination Controls -->
+    <div class="pagination-controls">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+    
+    
+    <h2>Your Cart
+      <button (click)="fetchCart()" class="refresh-cart-btn">Refresh Cart</button>
+    </h2>
+    <div *ngFor="let cartItem of cartItems">
+      <p>{{ cartItem.item.itemName }} | {{cartItem.item.description}} | ${{ cartItem.item.price }} <br> (Qty: {{ cartItem.quantity }})</p>
+      <div class="cart-actions">
+        
+        <button (click)="removeFromCart(cartItem)" class="remove-btn">Remove</button>
+        <br>
+        <!-- Quantity input field -->
+        <input type="number" [(ngModel)]="cartItem.quantity" min="1" class="quantity-input" />
+        
+        <!-- Update button for submitting changes -->
+        <button (click)="updateQuantity(cartItem)" class="update-btn" >Update</button>
+      </div>
+    </div>
+    <!-- Total Price Section -->
+    <div class="total-price">
+      <h3>Total Price: ${{ totalPrice }}</h3>
+    </div>
+  </div>
+  
+</div>

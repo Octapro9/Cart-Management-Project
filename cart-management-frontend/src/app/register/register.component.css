@@ -1,0 +1,154 @@
+.error-message {
+    color: red;
+    font-style: italic;
+    font-size: smaller;
+}
+
+.registration-success {
+    color: rgba(29, 202, 29, 0.967);
+    font-weight: 500;
+    font-size: large;
+}
+
+
+
+/* register.component.css */
+
+/* Body styles for the entire component */
+:host {
+    display: block;
+    padding: 0px;
+    background-color: #f9f9f9; /* Light background for the form */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading styles */
+  h2 {
+    color: #333; /* Darker text color for the heading */
+  }
+  
+  /* Error message styles */
+  .error-message {
+    color: red; /* Red color for error messages */
+    font-size: 14px; /* Slightly larger font for readability */
+  }
+  
+  /* Success message styles */
+  .registration-success {
+    background-color: rgba(255, 228, 196, 0.8); /* Bisque with slight transparency */
+    color: green; /* Green color for success messages */
+    font-size: 16px; /* Larger font for better visibility */
+    margin: 10px 0; /* Margin for spacing */
+    padding: 10px; /* Padding for better appearance */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.error-message-main {
+    background-color: rgba(255, 102, 102, 0.8); /* Light red with slight transparency */
+    color: white; /* White color for error messages */
+    font-size: 16px; /* Larger font for better visibility */
+    margin: 10px 0; /* Margin for spacing */
+    padding: 10px; /* Padding for better appearance */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+  /* Input styles */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding inside the input */
+    margin: 8px 0; /* Margin for spacing between inputs */
+    border: 1px solid #ccc; /* Light border color */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
+  
+  /* Button styles */
+  button {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 15px; /* Padding for button */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Margin for spacing */
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  /* Radio button styles */
+  input[type="radio"] {
+    margin-right: 5px; /* Spacing between radio button and label */
+  }
+  
+  /* General form styles */
+form {
+    max-width: 400px; /* Limit the width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+    margin-bottom: 50px;
+    padding: 20px; /* Add some padding */
+    padding-bottom: 10px;
+    border: 1px solid #ccc; /* Optional: Add a border to the form */
+    border-radius: 5px; /* Optional: Rounded corners */
+    background-color: #f9f9f9; /* Optional: Background color */
+  }
+
+  /* Styles for the registration title */
+.registration-title {
+    background: linear-gradient(to right, #6a5acd, #8a2be2); /* Purple-blue gradient */
+    color: white; /* White text color */
+    padding: 20px; /* Padding around the text */
+    text-align: left; /* Center the text */
+    border-radius: 2px; /* Optional: Rounded corners */
+    margin-bottom: 20px; /* Space below the title */
+    margin-top: 0;
+    font-size: 30px;
+  }
+
+  /* Register.component.css */
+
+/* Button container styles */
+.button-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align items to the right */
+    gap: 10px; /* Optional: Space between buttons */
+    margin-bottom: -10px; /* Optional: Space below the button container */
+  }
+  
+  /* Button styles for better appearance */
+  .button-container button {
+    padding: 10px 20px; /* Add some padding */
+    background-color: #4a90e2; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+  }
+  
+  .button-container button:hover {
+    background-color: #357ab8; /* Darker button color on hover */
+  }
+  
+  .form-title {
+    color:#357ab8;
+    text-align: center;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-bottom: 10px;
+  }
+
+  .whole {
+    background-image: url('/assets/bg2.jpg');
+    background-size:cover;
+    background-position: center;
+    height: 100vh;
+  }

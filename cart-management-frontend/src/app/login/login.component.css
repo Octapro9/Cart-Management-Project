@@ -1,0 +1,103 @@
+/* login.component.css */
+
+/* Overall container styles */
+.login-form {
+    background-color: #e0e7ff; /* Light purple-blue background */
+    /* background-image: url('/assets/bg2.jpg'); */
+    padding: 20px; /* Padding around the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    max-width: 400px; /* Limit the width of the form */
+    margin: 20px auto; /* Center the form horizontally */
+  }
+  
+  /* Input group styles */
+  .input-group {
+    margin-bottom: 15px; /* Space between input fields */
+  }
+  
+  /* Input field styles */
+  input {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside input */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in total width */
+  }
+  
+  /* Button container styles */
+  .button-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align items to the right */
+    margin-top: 10px; /* Space above the button */
+  }
+  
+  /* Button styles for better appearance */
+  .button-container button {
+    padding: 10px 20px; /* Add some padding */
+    background-color: #4a90e2; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+  }
+  
+  .button-container button:hover {
+    background-color: #357ab8; /* Darker button color on hover */
+  }
+  
+  /* Title styles */
+  h2 {
+    text-align: center; /* Center align the title */
+    color: #333; /* Darker color for contrast */
+  }
+  
+   /* Styles for the registration title */
+.registration-title {
+    background: linear-gradient(to right, #6a5acd, #8a2be2); /* Purple-blue gradient */
+    color: white; /* White text color */
+    padding: 20px; /* Padding around the text */
+    text-align: left; /* Center the text */
+    border-radius: 2px; /* Optional: Rounded corners */
+    margin-bottom: 20px; /* Space below the title */
+    margin-top: 0;
+    font-size: 30px;
+  }
+
+  .form-title {
+    color: rgba(29, 29, 224, 0.814);
+    font-size: 25px;
+    padding-bottom: 20px;
+  }
+
+  .whole {
+    flex: 1;
+    height: 100vh;
+    background-image: url('/assets/bg2.jpg');
+    background-size: cover;
+  }
+
+  .home-button {
+    float: inline-end;
+    background-color: #0800ff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 8px 8px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 0.7em; /* Font size */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.home-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Error message styles */
+.error-message h2 {
+  color: red; /* Ensures the error message is red */
+  font-size: 16px; /* Slightly larger font for readability */
+  font-style: italic; /* Italic style */
+}
+
+

@@ -1,0 +1,88 @@
+<!-- <p>register works!</p> -->
+ <div class="whole">
+
+ 
+<h2 class="registration-title">Registration Form</h2>
+<div class="button-container">
+  <button (click)="resetform()" >
+    Reset Form!
+  </button>
+  <button (click)="navigateToLogin()" >
+    Goto login
+  </button>
+</div>
+
+
+<div *ngIf="registrationSuccess" class="registration-success">
+  <h2>User registered successfully!</h2>
+  <p>Redirecting to the login page in {{countdown}} seconds...</p>
+</div>
+<div *ngIf="emailErrorMessage" class="error-message-main">
+  <h2>{{emailErrorMessage}}</h2>
+</div>
+
+<form *ngIf="!registrationSuccess" (ngSubmit)="onSubmit()"  #registrationForm = "ngForm">
+  <div class="form-title">
+    Register User:
+  </div>
+  <div>
+    <label for="name">Username: </label>
+    <input type="text" name="name" id="name" [(ngModel)] = "userData.name" required>
+    
+    <div *ngIf="registrationForm.submitted && !userData.name" class="error-message">
+      username is required.
+    </div>
+  </div>
+
+  <div>
+      <label for="email">Email: </label>
+      <input type="email" id="email" name="email" [(ngModel)] = "userData.email" (input)="onEmailChange()" required>
+      <div *ngIf="registrationForm.submitted && !userData.email" class="error-message">
+        email is required.
+      </div>
+  </div>
+
+  <div>
+    <label for="password">Password: </label>
+    <input type="password" id="password" name="password" [(ngModel)] = "userData.password" (input)="checkPasswordMatch()" required>
+    <div *ngIf="registrationForm.submitted && !userData.password" class="error-message">
+      password is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" name="confirmPassword" id="confirmPassword" [(ngModel)] ="confirmPassword" (input)="checkPasswordMatch()" required>
+    <div *ngIf="registrationForm.submitted && !confirmPassword" class="error-message">
+      Confirm Password is required.
+    </div>
+    <div  *ngIf=" registrationForm.submitted && confirmPassword && !passwordMatch" class="error-message">
+      Passwords do not match.
+    </div>
+  </div>
+
+  <div>
+    <p>Select Usertype: <br>
+    <input type="radio" name="Usertype" id="admin" [(ngModel)]="userData.userType" value="admin" ((change))="checkAdminPassword()" required>
+    <label for="admin">admin</label> <br>
+    <input type="radio" name="Usertype" id="normal" [(ngModel)] ="userData.userType" value="normal" >
+    <label for="normal">normal</label><br>
+  </p>
+    <div *ngIf="registrationForm.submitted && !userData.userType" class="error-message">
+      userType is required.
+    </div>
+  </div>
+  <!-- For Admin role specifically -->
+  <div *ngIf="userData.userType === 'admin' ">
+    <label for="adminPassword">Enter admin password: </label>
+    <input type="password" name="adminPassword" id="adminPassword" [(ngModel)]="adminPassword" (input)="checkAdminPassword()" />
+    <div *ngIf="adminPasswordError" class="error-message">{{ adminPasswordError }}</div>
+  </div>
+
+  <button type="submit" >Register</button>
+
+  
+  
+
+</form>
+</div>

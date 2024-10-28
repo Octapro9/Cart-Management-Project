@@ -1,0 +1,279 @@
+/* Ensure full coverage for the background */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c72, #2a9850, #667eea, #764ba2);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite; /* Smooth gradient animation */
+}
+
+/* Force the content to be centered and full page */
+.container {
+  background-color: rgba(202, 28, 28, 0.70); /* Slight transparency for content background */
+  background-image: url('/assets/bg2.jpg');
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animating background for a cool effect */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Heading text styling */
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ff6f61;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 28px;
+  color: #83524b;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ff9671;
+  padding-bottom: 10px;
+}
+
+/* Styling for the buttons */
+button {
+  background: linear-gradient(135deg, #ff6f61, #ff9671);
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0px 10px 15px rgba(255, 150, 113, 0.4);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 15px 20px rgba(255, 150, 113, 0.6);
+}
+
+/* Styling for the item and cart boxes */
+.item-box, .cart-box {
+  background-color: #74e19c; /* Light background for item boxes */
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-left: 8px solid #764ba2;
+}
+
+.item-box:hover, .cart-box:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+/* Styling for text and description */
+.item-box p, .cart-box p {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Cart items with quantity controls */
+input[type="number"] {
+  width: 50px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #ff9671;
+  text-align: center;
+}
+
+input[type="number"]:focus {
+  border-color: #ff6f61;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(255, 111, 97, 0.5);
+}
+
+/* Epic welcome animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure full coverage and centering */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}
+h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refresh-cart-btn {
+  margin-left: auto;
+}
+.account-container {
+  /* background-image: url('/assets/bg2.jpg'); */
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.logout-btn {
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refresh-cart-btn {
+  margin-left: auto;
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cart-item {
+  border: 1px solid #dd203f;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #5458be;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-input {
+  width: 60px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.remove-btn, .update-btn {
+  padding: 8px 12px;
+  background-color: #344c9c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.update-btn {
+  
+  background-color: #2196F3;
+}
+
+.remove-btn:hover, .update-btn:hover, .logout-btn:hover, .refresh-cart-btn:hover {
+  opacity: 0.9;
+}
+
+.total-price {
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* sEARCH BAR */
+/* Styling the search bar */
+input[type="text"] {
+  
+  width: 150%;
+  max-width: 600px;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #d0d278;
+  border-radius: 5px;
+  font-size: 16px;
+  
+}
+
+/* Optional: Add some shadow for better visibility */
+input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.search-bar-container {
+  text-align: center;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.pagination-controls button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

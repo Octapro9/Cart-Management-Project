@@ -1,0 +1,44 @@
+<div class="header">
+    <h1>Welcome, {{ adminName }}!</h1>
+    <button (click)="logout()" class="logout-button">Logout</button>
+</div>
+<div class="container">
+<!-- Page Title -->
+<div class="user-tiles-title">
+    <h2>All Users</h2>
+</div>
+
+
+<!-- User Cart Information -->
+ 
+    <div *ngFor="let userCart of paginatedItems" class="user-cart-container">
+    <!-- User Details -->
+        <div class="user-info">
+            <h3>{{ userCart.user.name }}</h3>
+            <p>Email: {{ userCart.user.email }}</p>
+            <p>User Type: <span class="user-type">{{ userCart.user.userType }}</span></p>
+        
+        </div>
+        <hr class="seperator">
+        <!-- User Cart Details -->
+        <div class="cart-details">
+            <h4>Cart Items:</h4>
+            <ul *ngIf="userCart.carts.length > 0; else emptyCart" class="cart-items">
+                <li *ngFor="let cartItem of userCart.carts" class="cart-item">
+                    <p><strong>{{ cartItem.item.itemName }}</strong></p>
+                    <p>Description: {{ cartItem.item.description }}</p>
+                    <p>Price: {{ cartItem.item.price | currency }} | Quantity: {{ cartItem.quantity }}</p>
+                </li>
+            </ul>
+            <ng-template #emptyCart>
+                <p class="empty-cart">(empty)</p>
+            </ng-template>
+        </div>
+    </div>
+    <!-- Pagination Controls -->
+    <div class="pagination-controls">
+        <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+        <span>Page {{ currentPage }} of {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+</div>
